@@ -20,6 +20,9 @@ const YearTimer = (props) => {
     Time.split(":")[2]
   ];
 
+  let yourString=  year + "년" + month + "월" +  day + "일" 
+  let timeString = hour + "시" + minute + "분" + seconds + "초"
+
   const callback = () => {
     setCount(count + 1);
   };
@@ -39,7 +42,7 @@ const YearTimer = (props) => {
   return (
     <div className="yearTimeWapper">
       <p className="time">
-        {year}년 {month}월 {day}일 {hour}시 {minute}분 {seconds}초
+        {props.includeYear?  yourString + " " + timeString: timeString  } 
       </p>
     </div>
   );

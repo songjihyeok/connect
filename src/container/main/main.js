@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./main.scss";
-import HourTimer from "../../components/hourTimer/hourTimer";
 import YearTimer from "../../components/yearTimer/yearTimer";
 import SortArray from "../../components/sortArray/sortArray";
 
@@ -54,11 +53,11 @@ const Main = (props) => {
 
   return (
     <div className="mainWrapper">
-      <HourTimer></HourTimer>
+      <YearTimer includeYear={false}></YearTimer>
       <input
         className="textInput"
         type="text"
-        placeholder="Large text"
+        placeholder="1, 4, 5, 6"
         onChange={inputHandler}
       />
       <button className="submitButton" onClick={submitHandler}>
@@ -66,7 +65,7 @@ const Main = (props) => {
       </button>
       <SortArray data={ascendArray}></SortArray>
       { loading? <SortArray data={declineArray}></SortArray> : null}
-      <YearTimer></YearTimer>
+      <YearTimer includeYear={true}></YearTimer>
     </div>
   );
 };
